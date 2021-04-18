@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='queueing-network',
+setup(name='queueing_network',
       version='0.0.1',
       install_requires=['gym']  # And any other dependencies foo needs
 )
