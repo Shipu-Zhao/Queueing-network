@@ -82,7 +82,7 @@ class QueueNetEnv(gym.Env):
         return p
     
     def r(self, s):
-        return -np.inner(s, self.c) 
+        return -np.inner(s, self.c)/self.B
 
     def newstate(self, s, transition):
         new = np.zeros(4)
