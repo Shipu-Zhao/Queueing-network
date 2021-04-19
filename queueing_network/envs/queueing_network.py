@@ -16,7 +16,7 @@ class QueueNetEnv(gym.Env):
         self.starting_state = config['starting_state']
 
         # Normalization factor for the uniformization
-        self.B = self.alpha + np.sum(self.nu)
+        self.B = round(self.alpha + np.sum(self.nu), 1)
 
         # Defines state and action spaces, sets current state to be starting_state
         self.action_space = gym.spaces.MultiBinary(4)
