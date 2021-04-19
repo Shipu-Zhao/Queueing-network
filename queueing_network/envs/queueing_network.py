@@ -46,19 +46,19 @@ class QueueNetEnv(gym.Env):
         return self.state
     
     
-    def indicator_0(s):
+    def indicator_0(self, s):
         if s == 0:
             return 0
         else:
             return 1
     
-    def indicator_N(s):
+    def indicator_N(self, s):
         if s == self.N:
             return 0
         else:
             return 1
         
-    def transition(action, transition, s):
+    def transition(self, action, transition, s):
     
         p0 = self.alpha/self.B * self.indicator_N(s[0])   
         p1 = self.nu[0]/self.B * action[0] * self.indicator_0(s[0]) * self.indicator_N(s[1])
@@ -81,10 +81,10 @@ class QueueNetEnv(gym.Env):
     
         return p
     
-    def r(s):
+    def r(self, s):
         return -np.inner(s, self.c) 
 
-    def newstate(s, transition):
+    def newstate(self, s, transition):
         new = np.zeros(4)
         new[:] = s[:]
     
