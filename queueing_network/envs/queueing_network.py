@@ -20,7 +20,7 @@ class QueueNetEnv(gym.Env):
 
         # Defines state and action spaces, sets current state to be starting_state
         self.action_space = gym.spaces.MultiBinary(4)
-        self.observation_space = gym.spaces.MultiDiscrete(4)
+        self.observation_space = gym.spaces.MultiDiscrete([self.N+1, self.N+1, self.N+1, self.N+1])
         self.state = self.starting_state
     
     
